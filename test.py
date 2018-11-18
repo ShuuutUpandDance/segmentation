@@ -1,17 +1,22 @@
 # -*- coding: utf-8 -*-
-import os
-import cv2
+from multiprocessing import Pool
+from tqdm import tqdm, trange
+from time import time
+from util import elements_gt_threshold
 import numpy as np
+import cv2
 
-rootDir = r'uw/uw1'
-outDIr = 'uw/uw1_vibe/'
+img = cv2.imread('90_4_down.jpg', 0)
+print(img.shape)
 
-image_file = os.path.join(rootDir, os.listdir(rootDir)[0])
-image = cv2.imread(image_file, 0)  # read as gray
-print(image.shape)
+x = 222
+y = 70
 
-r = cv2.resize(image,(600, 337))
-print(r.shape)
-cv2.imshow('r',r)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+left = x - 35
+right = x + 35
+up = y - 25
+down = y + 25
+print(img[up:down, left:right].shape)
+count = elements_gt_threshold(img[up:down, left:right], 150)
+print('count:', count)
+print(count / (70*50))
