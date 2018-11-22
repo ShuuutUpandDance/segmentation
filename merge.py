@@ -32,7 +32,7 @@ def denoise(img, radius):
 
 if __name__ == '__main__':
 
-    for i in range(90, 90 + N):
+    for i in range(110, 110 + N):
         pool = Pool(processes=4)
         f0_name = str(i) + '.jpg'
         f1_name = str(i + 1) + '.jpg'
@@ -74,27 +74,7 @@ if __name__ == '__main__':
 
         pool.close()
         pool.join()
-        # for j in range(h):
-        #     for k in range(w):
-                # left = max(k - radius, 0)
-                # right = min(k + radius, w - 1)
-                # up = max(j - radius, 0)
-                # down = min(j + radius, h - 1)
-                #
-                # count = 0
-                # for _j in range(up, down + 1):
-                #     for _k in range(left, right + 1):
-                #         if vibe_f0[_j, _k] > 200:
-                #             count += 1
-                #
-                # if count < 50:
-                #     vibe_f0[j, k] = 0
-        # print('Starting...')
-        # for proc in proc_list:
-        #     proc.start()
-        # print('Joining...')
-        # for proc in proc_list:
-        #     proc.join()
+
         vibe_f0[0: int(h / 2), 0: int(w / 2)] = proc_list[0].get()
         vibe_f0[0: int(h / 2), int(w / 2):] = proc_list[1].get()
         vibe_f0[int(h / 2): h, 0: int(w / 2)] = proc_list[2].get()

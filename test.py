@@ -9,14 +9,14 @@ import cv2
 img = cv2.imread('90_4_down.jpg', 0)
 print(img.shape)
 
-x = 222
-y = 70
+x = 220
+y = 68
 
-left = x - 35
-right = x + 35
-up = y - 25
-down = y + 25
+left = x - 16
+right = x + 16
+up = y - 16
+down = y + 16
 print(img[up:down, left:right].shape)
-count = elements_gt_threshold(img[up:down, left:right], 150)
+count = elements_gt_threshold(img[up:down, left:right], 200)
 print('count:', count)
-print(count / (70*50))
+print(count / (32*32))
