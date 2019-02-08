@@ -64,10 +64,10 @@ def vibe_detection(img, samples, _min, N, R, PHI):
     return segMap, samples
 
 
-rootDir = r'uw/uw2'
-outDIr = 'uw/uw2_vibe_morph/'
+rootDir = r'uw/uw4'
+outDIr = 'uw/uw4_vibe/'
 W = 600
-H = 337
+H = 400
 
 image_file = os.path.join(rootDir, os.listdir(rootDir)[0])
 image = cv2.imread(image_file, 0)  # read as gray
@@ -84,7 +84,7 @@ bg_models = initial_background(image, N)
 files_list = os.listdir(rootDir)
 for i in tqdm(range(len(files_list))):
     # input_filename = 'I_SI_01-' + str(i) + '.jpg'
-    input_filename = str(i + 151) + '.jpg'
+    input_filename = str(i + 154) + '.jpg'
     path = os.path.join(rootDir, input_filename)
     frame = cv2.imread(path)
     frame = cv2.resize(frame, (W, H))

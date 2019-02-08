@@ -5,8 +5,8 @@ import os
 import time
 from multiprocessing import Pool
 
-vibe_input = 'uw/uw1_vibe'
-diff_input = 'uw/uw1_diff_3'
+vibe_input = 'uw/uw2_vibe'
+diff_input = 'uw/uw2_diff_3'
 
 N = 3
 
@@ -30,9 +30,10 @@ def denoise(img, radius):
                 img[j, k] = 0
     return img
 
+
 if __name__ == '__main__':
 
-    for i in range(110, 110 + N):
+    for i in range(184, 184 + N):
         pool = Pool(processes=4)
         f0_name = str(i) + '.jpg'
         f1_name = str(i + 1) + '.jpg'

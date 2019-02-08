@@ -5,16 +5,16 @@ import numpy as np
 from tqdm import tqdm
 
 
-rootDir = r'uw/uw2'
-outDIr = 'uw/uw2_diff_3/'
+rootDir = r'uw/uw4'
+outDIr = 'uw/uw4_diff_3/'
 W = 600
-H = 337
+H = 400
 
 files_list = os.listdir(rootDir)
 for i in tqdm(range(1, len(files_list) - 1)):
-    current_filename = str(i + 151) + '.jpg'
-    before_filename = str(i + 151 - 1) + '.jpg'
-    after_filename = str(i + 151 + 1) + '.jpg'
+    current_filename = str(i + 152) + '.jpg'
+    before_filename = str(i + 152 - 1) + '.jpg'
+    after_filename = str(i + 152 + 1) + '.jpg'
 
     current_path = os.path.join(rootDir, current_filename)
     before_path = os.path.join(rootDir, before_filename)

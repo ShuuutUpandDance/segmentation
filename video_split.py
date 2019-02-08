@@ -16,6 +16,6 @@ def getFrame(videoPath, svPath):
             cv2.imencode('.jpg', frame)[1].tofile(newPath)
 
 
-video_path = 'uw/uw2.mp4'
-img_path = 'uw/uw2/'
+video_path = 'uw/uw4.mp4'
+img_path = 'uw/uw4/'
 getFrame(video_path, img_path)
